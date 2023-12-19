@@ -13,7 +13,7 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
-	border: 0;
+/* 	border: 0; */
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
@@ -47,7 +47,7 @@ table {
 * {
     background: black;
     color: white;
-    border: 1px solid red;
+/*     border: 1px solid red; */
 }
 
 
@@ -78,26 +78,49 @@ table {
     margin-top: 15vh;
 }
 
-.right-header p {
-    margin-top: 3ch;
+.third-line {
+    margin: 3ch 0ch;
+}
+
+.fourth-line {
+    margin-top: 6ch;
+}
+
+.fourth-line {
+    background-color: white;
+    color: black;
+}
+
+.form,
+.column,
+form {
+    background: linear-gradient(white, grey);
 }
 
 form {
     font-size: 1.5rem;
     width: 40vw;
-    margin: 3ch;
     display: flex;
+    justify-content: space-evenly;
 }
 
-.form p {
-    width: 40vw;
+.form .motivation {
     font-size: 2rem;
     margin-top: 5vh;
-    margin-left: 2.5ch;
+    width: 40vw;
 }
 
 .column {
     display: flex;
     flex-direction: column;
     margin: 2.5ch;
+}
+
+.submit {
+    font-size: 2rem;
+    border-radius: 20%;
+}
+
+em {
+    font-style: italic;
 }
