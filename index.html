@@ -24,7 +24,7 @@
         </div>
         <div class="form">
             
-            <form action="" method="get">
+            <form action=" " method="get">
                 <div class="left-column column">
                     <label for="first-name">First Name:</label>
                     <input type="text" id="first-name" placeholder="Dobermann" required></input>
@@ -33,7 +33,7 @@
                     <input type="email" id="email" placeholder="belly.rubs@woof.com" required></input>
             
                     <label for="password">Password:</label>
-                    <input type="password" id="password" placeholder="********"></input>
+                    <input type="password" id="password" placeholder="********" pattern="\w{8,14}" required></input>
                 </div>
                 <div class="right-column column">
                     <label for="last-name">Last Name:</label>
@@ -41,15 +41,15 @@
             
             
                     <label for="phone">Contact Number:</label>
-                    <input type="tel" id="phone" placeholder="07123456789" pattern="[0-9]*"></input>
+                    <input type="tel" id="phone" placeholder="07123456789" pattern="\d{9,15}"></input>
             
-                    <label for="password">Confirm password:</label>
-                    <input type="password" id="confirm-password" placeholder="********" required></input>
+                    <label for="confirm-password">Confirm password:</label>
+                    <input type="password" id="confirm-password" placeholder="********" pattern="\w{8,14}" required></input>
                 </div>
             </form>
         </div>
         <div class="create-login">
-            <button class="submit">Create Account</button>
+            <button type="submit" class="submit">Create Account</button>
             <div class="login">Have an account already?<a href="">Log in</a></div>
         </div>
     </div>

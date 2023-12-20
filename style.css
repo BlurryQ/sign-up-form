@@ -51,6 +51,7 @@ table {
 body {
     font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     letter-spacing: 0.1rem;
+    --dobe-rust: #CF742F;
 }
 
 .container {
@@ -69,7 +70,7 @@ body {
 }
 
 .left {
-    background: url(leaves.jpg) repeat 30%;
+    background: url(dobe.jpg) repeat 30%;
     font-size: clamp(40px, 8vw, 8rem);
 }
 
@@ -77,8 +78,8 @@ body {
     text-align: center;
     margin-top: 15vh;
     background: black;
-    color: white;
-    opacity: 0.3;
+    color: var(--dobe-rust);
+    opacity: 0.5;
     height: fit-content;
 }
 
@@ -119,7 +120,7 @@ body {
 }
 
 .form {
-    background: linear-gradient(white, grey);
+    background: linear-gradient(white, rgba(32, 31, 31, 0.856));
     width: 100%;
 }
 
@@ -162,22 +163,15 @@ label {
     margin: min(2.5ch, 3vw);
 }
 
-.submit {
-    font-size: 1.5rem;
-    border-radius: 1ch;
-    padding: 0.3ch;
-    margin-bottom: 1ch;
-}
-
 em {
     font-style: italic;
 }
 
 input {
-    padding: 0.5ch;
     border: 1px solid grey;
     border-radius: 1ch;
     width: max(20ch, 20vw);
+    margin-top: 0.5ch;
     padding: 1ch;
 }
 
@@ -185,10 +179,31 @@ input:invalid {
     border: 2px solid red;
 }
 
+input:invalid:focus {
+    background-color: rgba(255, 0, 0, 0.2);
+}
+
 input:valid {
     border: 2px solid green;
 }
 
+input:valid:focus {
+    background-color: rgba(0, 180, 0, 0.2);
+}
+
 input:placeholder-shown {
     border: 1px solid grey;
+}
+
+a {
+    color: var(--dobe-rust);
+}
+
+.submit {
+    font-size: 1.5rem;
+    border-radius: 1ch;
+    padding: 0.3ch;
+    margin-bottom: 1ch;
+    color: white;
+    background-color: var(--dobe-rust);
 }
