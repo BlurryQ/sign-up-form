@@ -13,7 +13,7 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
-/* 	border: 0; */
+	border: 0;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
@@ -44,46 +44,73 @@ table {
 
 /* Meyer Web Reset above */
 
-* {
-    background: black;
-    color: white;
-/*     border: 1px solid red; */
+.root {
+    --right-width: 60vw;
 }
 
+body {
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    letter-spacing: 0.1rem;
+}
 
 .container {
     display: flex;
     height: 100vh;
 }
 
-.left,
+.left {
+    display: flex;
+    width: max(11ch, 35vw);
+}
+
 .right {
     display: flex;
-    width: 50vw;
+    width: max(45ch, 65vw);
 }
 
 .left {
-    background: url(leaves.jpg) no-repeat 100%;
-    font-size: 10vh;
+    background: url(leaves.jpg) repeat 30%;
+    font-size: clamp(40px, 8vw, 8rem);
+}
+
+.brand {
+    text-align: center;
+    margin-top: 15vh;
+    background: black;
+    color: white;
+    opacity: 0.3;
+    height: fit-content;
 }
 
 .right {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
-.right-header {
-    width: 40vw;
-    font-size: 2rem;
-    margin-top: 15vh;
+.line {
+    margin-left: min(2.5ch, 3vw);
+}
+
+.right-content {
+    width: var(--right-width);
+    font-size: clamp(20px, 5vw, 2rem);
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.second-line {
+    margin-top: min(1ch, 3vw);
 }
 
 .third-line {
-    margin: 3ch 0ch;
+    margin-top: min(3ch, 10vw);
+    margin-bottom: min(3ch, 10vw);
+    margin-left: min(2.5ch, 3vw);
 }
 
 .fourth-line {
-    margin-top: 6ch;
+    margin-top: min(3ch, 10vw);
 }
 
 .fourth-line {
@@ -91,36 +118,77 @@ table {
     color: black;
 }
 
-.form,
-.column,
-form {
+.form {
     background: linear-gradient(white, grey);
+    width: 100%;
 }
 
 form {
     font-size: 1.5rem;
-    width: 40vw;
     display: flex;
-    justify-content: space-evenly;
+    margin-left: clamp(0ch, 2vw, 2ch);
+    margin-right: clamp(0ch, 2vw, 2ch);
+}
+
+label {
+    margin-top: 1ch;
 }
 
 .form .motivation {
     font-size: 2rem;
     margin-top: 5vh;
-    width: 40vw;
 }
 
 .column {
     display: flex;
     flex-direction: column;
-    margin: 2.5ch;
+    margin-bottom: 2.5ch;
+    margin-top: 2.5ch;
+}
+
+.left-column,
+.right-column {
+    margin-left: clamp(0ch, 2vw, 2ch);
+    margin-right: clamp(0ch, 2vw, 2ch);
+}
+
+.create-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    font-size: 1.5rem;
+    margin: min(2.5ch, 3vw);
 }
 
 .submit {
-    font-size: 2rem;
-    border-radius: 20%;
+    font-size: 1.5rem;
+    border-radius: 1ch;
+    padding: 0.3ch;
+    margin-bottom: 1ch;
 }
 
 em {
     font-style: italic;
+}
+
+input {
+    padding: 0.5ch;
+    border: 1px solid grey;
+    border-radius: 1ch;
+    width: max(20ch, 20vw);
+    padding: 1ch;
+}
+
+input:invalid {
+    border: 2px solid red;
+}
+
+input:valid {
+    border: 2px solid green;
+}
+
+input:placeholder-shown {
+    border: 1px solid grey;
 }
