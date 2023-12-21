@@ -44,14 +44,27 @@ table {
 
 /* Meyer Web Reset above */
 
-.root {
+:root {
+    --dobe-rust: #CF742F;
     --right-width: 60vw;
-}
-
-body {
     font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     letter-spacing: 0.1rem;
-    --dobe-rust: #CF742F;
+
+    --theme-text: black;
+    --theme-background: white;
+    --theme-gradient: rgba(30, 30, 30, 0.85);
+}
+
+:root.dark {
+    --theme-text: white;
+    --theme-background: black;
+    --theme-gradient: rgba(220, 220, 220, 0.85);
+}
+
+:root.light {
+    --theme-text: black;
+    --theme-background: white;
+    --theme-gradient: rgba(30, 30, 30, 0.85);
 }
 
 .container {
@@ -71,6 +84,7 @@ body {
 
 .left {
     background: url(dobe.jpg) repeat 30%;
+    height: 1100px;
     font-size: clamp(40px, 8vw, 8rem);
 }
 
@@ -84,17 +98,19 @@ body {
 }
 
 .right {
+    width: var(--right-width);
     flex-direction: column;
     align-items: flex-start;
 }
 
 .line {
     margin-left: min(2.5ch, 3vw);
+    word-wrap: wrap;
 }
 
 .right-content {
-    width: var(--right-width);
-    font-size: clamp(20px, 5vw, 2rem);
+    width: clamp(250px, 50vw, 800px);
+    font-size: clamp(20px, 2vw, 4vw);
     margin-top: 10vh;
     display: flex;
     flex-direction: column;
@@ -112,15 +128,11 @@ body {
 
 .fourth-line {
     margin-top: min(3ch, 10vw);
-}
-
-.fourth-line {
-    background-color: white;
-    color: black;
+    margin-bottom: 2.5ch;
 }
 
 .form {
-    background: linear-gradient(white, rgba(32, 31, 31, 0.856));
+    background: linear-gradient(var(--theme-background), var(--theme-gradient));
     width: 100%;
 }
 
@@ -129,6 +141,8 @@ form {
     display: flex;
     margin-left: clamp(0ch, 2vw, 2ch);
     margin-right: clamp(0ch, 2vw, 2ch);
+    width: clamp(250px, 50vw, 100%);
+    flex-wrap: wrap;
 }
 
 label {
@@ -140,17 +154,20 @@ label {
     margin-top: 5vh;
 }
 
-.column {
+.row {
     display: flex;
     flex-direction: column;
-    margin-bottom: 2.5ch;
-    margin-top: 2.5ch;
 }
 
-.left-column,
-.right-column {
+.top-row,
+.middle-row,
+.bottom-row {
     margin-left: clamp(0ch, 2vw, 2ch);
     margin-right: clamp(0ch, 2vw, 2ch);
+}
+
+.bottom-row {
+    margin-bottom: 2.5ch;
 }
 
 .create-login {
@@ -158,8 +175,7 @@ label {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-
-    font-size: 1.5rem;
+    font-size: clamp(10px, 1vw, 2vw);
     margin: min(2.5ch, 3vw);
 }
 
