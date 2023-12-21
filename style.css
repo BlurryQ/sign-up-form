@@ -67,7 +67,8 @@ table {
 .left {
     display: flex;
     width: max(11ch, 35vw);
-    background: url(dobe.jpg) no-repeat 30%;
+    background: url(dobe.jpg) no-repeat;
+    background-size: cover;
     font-size: clamp(40px, 8vw, 8rem);
 }
 
@@ -75,6 +76,9 @@ table {
     display: flex;
     width: max(45ch, 65vw);
     background: url(doberman-black.svg) no-repeat center;
+    width: var(--right-width);
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .brand {
@@ -87,23 +91,18 @@ table {
     height: fit-content;
 }
 
-.right {
-    width: var(--right-width);
+.right-content {
+    width: clamp(250px, 50vw, 800px);
+    font-size: clamp(20px, 2.5rem, 1.5vw);
+    padding-top: 10vh;
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
 }
 
 .line {
     margin-left: min(2.5ch, 3vw);
     word-wrap: wrap;
-}
-
-.right-content {
-    width: clamp(250px, 50vw, 800px);
-    font-size: clamp(20px, 2vw, 4vw);
-    padding-top: 10vh;
-    display: flex;
-    flex-direction: column;
+    line-height: 2ch;
 }
 
 .second-line {
@@ -127,7 +126,7 @@ table {
 }
 
 form {
-    font-size: 1.5rem;
+    font-size: clamp(15px, 1.5rem, 1vw);
     display: flex;
     margin-left: clamp(0ch, 2vw, 2ch);
     margin-right: clamp(0ch, 2vw, 2ch);
@@ -140,7 +139,6 @@ label {
 }
 
 .form .motivation {
-    font-size: 2rem;
     padding-top: 5vh;
 }
 
@@ -195,7 +193,8 @@ input:placeholder-shown {
 .login a {
     color: var(--dobe-rust);
     font-weight: bold;
-    text-decoration: none;
+    text-decoration-color: grey;
+
 }
 
 .create-login {
@@ -203,22 +202,28 @@ input:placeholder-shown {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    font-size: clamp(15px, 1.5vw, 3rem);
+    font-size: clamp(15px, 1.5rem, 1vw);
     margin: min(2.5ch, 3vw);
 }
 
 .submit {
-    font-size: clamp(25px, 2vw, 4rem);
+    font-size: clamp(20px, 2.5rem, 1.5vw);
     border-radius: 1ch;
     padding: 0.3ch;
+    padding-right: 0.5ch;
     margin-bottom: 1ch;
     color: white;
     background-color: var(--dobe-rust);
+    border: 3px solid grey;
+}
+
+.submit:active {
+    border: 3px solid var(--dobe-rust);
 }
 
 footer {
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
     background-color: var(--dobe-rust-opacity);
     padding: 0.5vh; 
 }
