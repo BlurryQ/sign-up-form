@@ -46,54 +46,44 @@ table {
 
 :root {
     --dobe-rust: #CF742F;
+    --dobe-rust-opacity: #cf742fa6;
     --right-width: 60vw;
-    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --theme-text: black;
+    --theme-background: rgba(255, 255, 255, 0.4);
+    --theme-gradient: rgba(30, 30, 30, 0.85);
+
+    font-family: "Roboto", system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     letter-spacing: 0.1rem;
-
-    --theme-text: black;
-    --theme-background: white;
-    --theme-gradient: rgba(30, 30, 30, 0.85);
 }
 
-:root.dark {
-    --theme-text: white;
-    --theme-background: black;
-    --theme-gradient: rgba(220, 220, 220, 0.85);
-}
-
-:root.light {
-    --theme-text: black;
-    --theme-background: white;
-    --theme-gradient: rgba(30, 30, 30, 0.85);
+.brand img {
+    height: 150px;
 }
 
 .container {
     display: flex;
-    height: 100vh;
 }
 
 .left {
     display: flex;
     width: max(11ch, 35vw);
+    background: url(dobe.jpg) no-repeat 30%;
+    font-size: clamp(40px, 8vw, 8rem);
 }
 
 .right {
     display: flex;
     width: max(45ch, 65vw);
-}
-
-.left {
-    background: url(dobe.jpg) repeat 30%;
-    height: 1100px;
-    font-size: clamp(40px, 8vw, 8rem);
+    background: url(doberman-black.svg) no-repeat center;
 }
 
 .brand {
+    font-family: "Agbalumo", "Roboto", system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     text-align: center;
-    margin-top: 15vh;
-    background: black;
+    margin-top: 8vh;
+    padding-bottom: 5vh;
+    background: rgba(0, 0, 0, 0.6);
     color: var(--dobe-rust);
-    opacity: 0.5;
     height: fit-content;
 }
 
@@ -111,7 +101,7 @@ table {
 .right-content {
     width: clamp(250px, 50vw, 800px);
     font-size: clamp(20px, 2vw, 4vw);
-    margin-top: 10vh;
+    padding-top: 10vh;
     display: flex;
     flex-direction: column;
 }
@@ -151,7 +141,7 @@ label {
 
 .form .motivation {
     font-size: 2rem;
-    margin-top: 5vh;
+    padding-top: 5vh;
 }
 
 .row {
@@ -168,15 +158,6 @@ label {
 
 .bottom-row {
     margin-bottom: 2.5ch;
-}
-
-.create-login {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    font-size: clamp(10px, 1vw, 2vw);
-    margin: min(2.5ch, 3vw);
 }
 
 em {
@@ -211,15 +192,33 @@ input:placeholder-shown {
     border: 1px solid grey;
 }
 
-a {
+.login a {
     color: var(--dobe-rust);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.create-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: clamp(15px, 1.5vw, 3rem);
+    margin: min(2.5ch, 3vw);
 }
 
 .submit {
-    font-size: 1.5rem;
+    font-size: clamp(25px, 2vw, 4rem);
     border-radius: 1ch;
     padding: 0.3ch;
     margin-bottom: 1ch;
     color: white;
     background-color: var(--dobe-rust);
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dobe-rust-opacity);
+    padding: 0.5vh; 
 }
