@@ -48,16 +48,42 @@ table {
     --dobe-rust: #CF742F;
     --dobe-rust-opacity: #cf742fa6;
     --right-width: 60vw;
-    --theme-text: black;
-    --theme-background: rgba(255, 255, 255, 0.4);
-    --theme-gradient: rgba(30, 30, 30, 0.85);
+ 
 
     font-family: "Roboto", system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     letter-spacing: 0.1rem;
 }
 
+:root.light {
+    --theme-text: black;
+    --theme-background: rgba(255, 255, 255, 0.4);
+    --theme-gradient: rgba(30, 30, 30, 0.85);
+    --background-svg: url(dobe-black.svg);
+    --theme-toggle: url(sun.svg);
+
+    color: var(--theme-text);
+    background-color: var(--theme-background);
+}
+
+:root.dark {
+    --theme-text: var(--dobe-rust);
+    --theme-background: rgba(0, 0, 0, 0.9)  ;
+    --theme-gradient: rgba(100, 100, 100, 0.85);
+    --background-svg: url(dobe-white.svg);
+    --theme-toggle: url(full-moon.svg);
+
+
+    color: var(--theme-text);
+    font-weight: bold;
+    background-color: var(--theme-background);
+}
+
 .brand img {
     height: 150px;
+}
+
+#theme {
+    background-image: var(--theme-toggle);
 }
 
 .container {
@@ -75,7 +101,7 @@ table {
 .right {
     display: flex;
     width: max(45ch, 65vw);
-    background: url(doberman-black.svg) no-repeat center;
+    background: var(--background-svg) no-repeat center;
     width: var(--right-width);
     flex-direction: column;
     align-items: flex-start;
