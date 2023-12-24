@@ -1,9 +1,13 @@
-console.log("This will grant you access to Dobermann pics :D")
+const themeToggle = document.getElementById("theme-toggle");
+themeToggle.style.cssText = "background: url(images/moon.svg)"
 
-const theme = document.getElementById("theme");
-theme.addEventListener("click", () => {
+const root = document.documentElement;
+root.className = "light";
+
+themeToggle.addEventListener("click", () => {
     console.log("woof")
-toggleTheme();
+    themeToggle.style.cssText = "";
+    toggleTheme();
     })
 
 const password = document.getElementById("password");
@@ -29,7 +33,6 @@ createAccount.addEventListener("click", () => {
 })
 
 function toggleTheme() {
-    const root = document.documentElement;
     const newTheme = root.className === "dark" ? "light" : "dark";
     root.className = newTheme;
 }

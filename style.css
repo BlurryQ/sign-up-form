@@ -58,8 +58,8 @@ table {
     --theme-text: black;
     --theme-background: rgba(255, 255, 255, 0.4);
     --theme-gradient: rgba(30, 30, 30, 0.85);
-    --background-svg: url(dobe-black.svg);
-    --theme-toggle: url(sun.svg);
+    --background-svg: url(images/dobe-black.svg);
+    --theme-toggle: url(images/moon.svg);
 
     color: var(--theme-text);
     background-color: var(--theme-background);
@@ -69,9 +69,8 @@ table {
     --theme-text: var(--dobe-rust);
     --theme-background: rgba(0, 0, 0, 0.9)  ;
     --theme-gradient: rgba(100, 100, 100, 0.85);
-    --background-svg: url(dobe-white.svg);
-    --theme-toggle: url(full-moon.svg);
-
+    --background-svg: url(images/dobe-white.svg);
+    --theme-toggle: url(images/sun.svg);
 
     color: var(--theme-text);
     font-weight: bold;
@@ -82,8 +81,11 @@ table {
     height: 150px;
 }
 
-#theme {
+.theme-toggle {
     background-image: var(--theme-toggle);
+    padding: 10px;
+    align-self: flex-end;
+    margin: 2vh 3vh;
 }
 
 .container {
@@ -93,14 +95,13 @@ table {
 .left {
     display: flex;
     width: max(11ch, 35vw);
-    background: url(dobe.jpg) no-repeat;
+    background: url(images/dobe.jpg) no-repeat;
     background-size: cover;
     font-size: clamp(40px, 8vw, 8rem);
 }
 
 .right {
     display: flex;
-    width: max(45ch, 65vw);
     background: var(--background-svg) no-repeat center;
     width: var(--right-width);
     flex-direction: column;
@@ -115,6 +116,7 @@ table {
     background: rgba(0, 0, 0, 0.6);
     color: var(--dobe-rust);
     height: fit-content;
+    font-weight: 100;
 }
 
 .right-content {
@@ -231,6 +233,11 @@ input:placeholder-shown {
     font-size: clamp(15px, 1.5rem, 1vw);
     margin: min(2.5ch, 3vw);
 }
+
+.submit:hover {
+    border: 3px solid #FFAC00;
+}
+
 
 .submit {
     font-size: clamp(20px, 2.5rem, 1.5vw);
