@@ -1,3 +1,6 @@
+let passwordValue = "";
+let confirmedPasswordValue = "";
+
 const themeToggle = document.getElementById("theme-toggle");
 themeToggle.style.cssText = "background: url(images/moon.svg)"
 
@@ -12,27 +15,37 @@ themeToggle.addEventListener("click", () => {
 
 const password = document.getElementById("password");
 password.addEventListener("change", () => {
-    string = password.value
-    console.log(string);
+    passwordValue = password.value
     })
 
 const confirmPassword = document.getElementById("confirm-password");
 confirmPassword.addEventListener("change", () => {
-    string = confirmPassword.value
-    console.log(string);
+    confirmedPasswordValue = confirmPassword.value
     })
 
 const createAccount = document.getElementById("submit")
 createAccount.addEventListener("click", () => {
-    console.log("HERE")
-    if(password === confirmPassword) {
-        console.log("match")
+    console.log("Checking passwords match...")
+    let passwordMatch = checkPasswordsMatch(passwordValue, confirmedPasswordValue);
+    if(passwordMatch) {
+        return true;
     } else {
-        console.log("invalid")
+        
     }
 })
 
 function toggleTheme() {
     const newTheme = root.className === "dark" ? "light" : "dark";
     root.className = newTheme;
+}
+
+function checkPasswordsMatch(inputOne, inputTwo) {
+    if(inputOne === inputTwo) {
+        console.log("Password match")
+        return true;
+    } else {
+        console.log("Passwords do not match")
+        return false;
+    }
+
 }
