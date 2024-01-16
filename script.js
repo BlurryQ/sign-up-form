@@ -1,6 +1,11 @@
 let passwordValue = "";
 let confirmedPasswordValue = "";
 
+const bottomRow = document.getElementById("bottom-row");
+const div = document.createElement("div");
+div.classList.add("error-font")
+div.textContent = "Passwords do not match."
+
 const themeToggle = document.getElementById("theme-toggle");
 themeToggle.style.cssText = "background: url(images/moon.svg)"
 
@@ -13,24 +18,33 @@ themeToggle.addEventListener("click", () => {
     toggleTheme();
     })
 
+
+const createAccount = document.getElementById("submit");
+createAccount.setAttribute("disabled","true");
+
 const password = document.getElementById("password");
 password.addEventListener("change", () => {
     passwordValue = password.value
-    })
+    let passwordMatch = checkPasswordsMatch(passwordValue, confirmedPasswordValue);
+    if(passwordMatch) {
+        createAccount.removeAttribute("disabled");
+        bottomRow.removeChild(div);
+    } else {
+        createAccount.setAttribute("disabled","true");
+        bottomRow.appendChild(div);
+    }
+})
 
 const confirmPassword = document.getElementById("confirm-password");
 confirmPassword.addEventListener("change", () => {
     confirmedPasswordValue = confirmPassword.value
-    })
-
-const createAccount = document.getElementById("submit")
-createAccount.addEventListener("click", () => {
-    console.log("Checking passwords match...")
     let passwordMatch = checkPasswordsMatch(passwordValue, confirmedPasswordValue);
     if(passwordMatch) {
-        return true;
+        createAccount.removeAttribute("disabled");
+        bottomRow.removeChild(div);
     } else {
-        
+        createAccount.setAttribute("disabled","true");
+        bottomRow.appendChild(div);
     }
 })
 
