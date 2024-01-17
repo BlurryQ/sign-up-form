@@ -60,6 +60,8 @@ table {
     --background-svg: url(images/dobe-black.svg);
     --theme-toggle: url(images/moon.svg);
     --form-text: black;
+    --show: url(images/show.svg);
+    --hide: url(images/hide.svg);
 
     color: var(--theme-text);
     background-color: var(--theme-background);
@@ -72,6 +74,8 @@ table {
     --background-svg: url(images/dobe-white.svg);
     --theme-toggle: url(images/sun.svg);
     --form-text: white;
+    --show: url(images/show-white.svg);
+    --hide: url(images/hide-white.svg);
 
     color: var(--theme-text);
     font-weight: bold;
@@ -305,9 +309,9 @@ footer {
 }
 
 .show {
-    background: url(images/show.svg) no-repeat center; 
+    background: var(--show) no-repeat center; 
 }
 
 .hide {
-    background: url(images/hide.svg) no-repeat center; 
+    background: var(--hide) no-repeat center; 
 }
