@@ -159,8 +159,6 @@ form {
     font-size: clamp(15px, 1.5rem, 1vw);
     display: flex;
     margin-left: clamp(0ch, 2vw, 2ch);
-    margin-right: clamp(0ch, 2vw, 2ch);
-    width: clamp(250px, 50vw, 100%);
     flex-wrap: wrap;
 }
 
@@ -199,14 +197,17 @@ input {
     margin-top: 0.5ch;
     padding: 1ch;
     color: var(--form-text);
+    background-color: var(--theme-background);
 }
 
 input:invalid:focus {
     background-color: rgba(255, 0, 0, 0.2);
+    color: var(--form-text);
 }
 
 input:valid:focus {
     background-color: rgba(0, 180, 0, 0.2);
+    color: var(--form-text);
 }
 
 input:placeholder-shown {
@@ -300,12 +301,13 @@ footer {
     position: relative;
     bottom: max(23px, 3vh);
     left: max(130px, 18vw);
+    width: 15px;
 }
 
 .show {
-    background: url(images/show.svg) no-repeat left; 
+    background: url(images/show.svg) no-repeat center; 
 }
 
 .hide {
-    background: url(images/hide.svg) no-repeat left; 
+    background: url(images/hide.svg) no-repeat center; 
 }

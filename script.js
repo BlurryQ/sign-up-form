@@ -30,8 +30,10 @@ lastName.addEventListener("change", () => {
 
 const phone = document.getElementById("phone");
 phone.addEventListener("change", () => {
+    const numbers = /[\D]/;
+    let containtsLetters = numbers.test(phone.value);
     phoneLength = phone.value.length
-    if(phoneLength >= 9 && phoneLength <= 15) {
+    if(!containtsLetters && phoneLength >= 9 && phoneLength <= 15) {
         phone.classList.remove("invalid");
         phone.classList.add("valid");
     } else {
