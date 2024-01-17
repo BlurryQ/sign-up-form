@@ -201,16 +201,8 @@ input {
     color: var(--form-text);
 }
 
-input:invalid {
-    border: 2px solid red;
-}
-
 input:invalid:focus {
     background-color: rgba(255, 0, 0, 0.2);
-}
-
-input:valid {
-    border: 2px solid green;
 }
 
 input:valid:focus {
@@ -219,6 +211,22 @@ input:valid:focus {
 
 input:placeholder-shown {
     border: 1px solid grey;
+}
+
+#email:valid {
+    border: 2px solid green;
+}
+
+#email:invalid {
+    border: 2px solid red;
+}
+
+.valid {
+    border: 2px solid green;
+}
+
+.invalid {
+    border: 2px solid red;
 }
 
 .login a {
@@ -279,4 +287,25 @@ footer {
     font-weight: 800;
     padding-top: 1ch;
     align-self: center;
+}
+
+#password,
+#confirm-password {
+    position: relative;
+}
+
+.show,
+.hide {
+    padding: 7px;
+    position: relative;
+    bottom: max(23px, 3vh);
+    left: max(130px, 18vw);
+}
+
+.show {
+    background: url(images/show.svg) no-repeat left; 
+}
+
+.hide {
+    background: url(images/hide.svg) no-repeat left; 
 }
