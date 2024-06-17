@@ -47,7 +47,7 @@ table {
 :root {
     --dobe-rust: #CF742F;
     --dobe-rust-opacity: #cf742fa6;
-    --right-width: 60vw;
+    --right-width: 100%;
  
     font-family: "Roboto", system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     letter-spacing: 0.1rem;
@@ -156,7 +156,6 @@ table {
 .form {
     background: linear-gradient(var(--theme-background), var(--theme-gradient));
     width: 100%;
-    height: clamp(360px, 40vh, 45vw)
 }
 
 form {
@@ -174,20 +173,15 @@ label {
     padding-top: 5vh;
 }
 
-.row {
+.column {
     display: flex;
     flex-direction: column;
 }
 
-.top-row,
-.middle-row,
-.bottom-row {
+.top-column,
+.middle-column {
     margin-left: clamp(0ch, 2vw, 2ch);
     margin-right: clamp(0ch, 2vw, 2ch);
-}
-
-.bottom-row {
-    margin-bottom: 2.5ch;
 }
 
 em {
@@ -246,7 +240,7 @@ input:placeholder-shown {
     justify-content: flex-start;
     align-items: flex-start;
     font-size: clamp(15px, 1.5rem, 1vw);
-    margin: min(1ch, 3vw);
+    margin: 9vh 3vw;
 }
 
 .submit:hover {
@@ -279,13 +273,6 @@ footer {
     height: 3vh;
 }
 
-.another-container {
-    flex-direction: column;
-    display: flex;
-    min-height: 100vh;
-    justify-content: space-between;
-}
-
 .error-font {
     color: darkred;
     font-size: 0.8rem;
@@ -299,12 +286,16 @@ footer {
     position: relative;
 }
 
+#toggle-pass {
+    bottom: 9.3vh;
+}
+
 .show,
 .hide {
     padding: 7px;
     position: relative;
-    bottom: max(23px, 3vh);
-    left: max(130px, 18vw);
+    bottom: 4.3vh;
+    left: 19vw;
     width: 15px;
 }
 
@@ -314,4 +305,53 @@ footer {
 
 .hide {
     background: var(--hide) no-repeat center; 
+}
+
+@media only screen and (max-width: 1300px) {
+
+    .show,
+    .hide {
+        left: 18.5vw;
+    } 
+}
+
+@media only screen and (max-width: 768px) {
+
+    form {
+        display: block;
+    }
+
+    input {
+        width: 90%;
+    }
+
+    .show,
+    .hide {
+        left: 41vw;
+    } 
+}
+
+@media only screen and (max-width: 500px) {
+
+    .left,
+    .brand {
+        width: 140px;
+        font-size: 1.5rem;
+    }
+
+    .brand img {
+        height: 150px;
+        width: 150px;
+    }
+
+    .brand {
+        margin: 0;
+        padding-bottom: 10px;
+    }
+
+    .show,
+    .hide {
+        left: 56vw;
+    } 
+
 }
